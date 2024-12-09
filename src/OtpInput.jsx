@@ -25,7 +25,7 @@ function OtpInput({length=4,onOtpSubmit=()=>{}}) {
         newOtp[index]=value.substring(value.length-1); //we use a new variable"newOtp" instead of setOtp is because setOtp is asynchronous
         setotp(newOtp);
 
-        //trigger for after cmpletion of entering otp 
+        //trigger for after completion of entering otp 
         const combinedOtp=newOtp.join("");
         if(combinedOtp.length===length)
             { onOtpSubmit(combinedOtp);}
