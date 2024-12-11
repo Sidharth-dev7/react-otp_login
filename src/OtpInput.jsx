@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import { useState,useEffect } from 'react';
 function OtpInput({length=4,onOtpSubmit=()=>{}}) {
 
-    const [otp, setotp] = useState(new Array(length).fill(" "));
+    const [otp, setotp] = useState(new Array(4).fill(""));
     const inputRefs=useRef([])
 
     //to make the cursor go to first slot of otp section
@@ -28,7 +28,9 @@ function OtpInput({length=4,onOtpSubmit=()=>{}}) {
         //trigger for after completion of entering otp 
         const combinedOtp=newOtp.join("");
         if(combinedOtp.length===length)
-            { onOtpSubmit(combinedOtp);}
+            {   
+            
+               onOtpSubmit(combinedOtp);}
 
         //inorder to move to next input
 
